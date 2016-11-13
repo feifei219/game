@@ -24,7 +24,7 @@ Person.prototype={
     update:function(frame){
         if(this.jump){
             this.pos=4;
-            if(frame%4==0){
+            if(frame%2==0){
                 this.heightcontrol-=3;
                 this.jumpheight+=this.heightcontrol;
                 if(this.jumpheight<=0){
@@ -36,7 +36,7 @@ Person.prototype={
             
             this.draw();
         }else{
-            this.pos=Math.floor(frame/4)%this.img.length;
+            this.pos=Math.floor(frame/2)%this.img.length;
             this.draw();
         }
         
